@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: moviesapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moviesapi
+  template:
+    metadata:
+      labels:
+        app: moviesapi 
+    spec:
+      containers:
+        - name: moviesapi 
+          image: vyevdcinemadockererregistry.azurecr.io/moviesapi
+          ports:
+          - containerPort: 80
